@@ -1,0 +1,94 @@
+:root {
+  --light-purple: rgba(108, 64, 181, 1);
+  --dark-purple: rgba(255, 255, 255, 1);
+  --white: rgba(255, 255, 255, 0.2);
+  --black: rgba(255, 255, 255, 0.5);
+  --grey: rgba(102, 102, 102, 1);
+}
+
+#todays-weather {
+  padding: 0 0.5rem;
+
+  h1 {
+    font-size: unset;
+    font-weight: 400;
+    padding: 1rem 0.5rem;
+  }
+
+  #weather-widget {
+    display: grid;
+    grid-template-areas:
+      'temperature temperature temperature temperature'
+      'tempHL tempHL tempHL tempHL'
+      'city time humidity weather';
+    gap: 0.25rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  #city-text {
+    grid-area: city;
+    color: var(--grey);
+    font-weight: 700;
+  }
+
+  #weather-text {
+    grid-area: weather;
+    justify-self: flex-end;
+    color: var(--grey);
+  }
+
+  #description-text {
+    grid-area: description;
+  }
+
+  #temperature-text {
+    grid-area: temperature;
+    font-size: 6.5rem;
+    font-weight: 700;
+    color: var(--light-purple);
+    margin: 0;
+    line-height: 6rem;
+  }
+
+  #tempHL-text {
+    grid-area: tempHL;
+  }
+
+  #humidity-text {
+    grid-area: humidity;
+    color: var(--grey);
+  }
+
+  #time-text {
+    grid-area: time;
+    color: var(--grey);
+  }
+
+  @media (max-width: 600px) {
+    #weather-widget {
+      display: grid;
+      grid-template-areas:
+        'temperature weather'
+        'tempHL humidity'
+        'city time';
+      gap: 0.25rem;
+    }
+
+    #weather-text {
+      align-self: flex-end;
+    }
+
+    #humidity {
+      justify-self: flex-end;
+      align-self: flex-end;
+    }
+
+    #time {
+      justify-self: flex-end;
+      align-self: flex-end;
+    }
+  }
+}

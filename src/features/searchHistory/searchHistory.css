@@ -1,0 +1,97 @@
+:root {
+  --light-purple: rgba(108, 64, 181, 1);
+  --dark-purple: rgba(255, 255, 255, 1);
+  --white: rgba(255, 255, 255, 0.2);
+  --black: rgba(255, 255, 255, 0.5);
+  --grey: rgba(102, 102, 102, 1);
+}
+
+#search-history {
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: clamp(0.5rem, 2vw, 1rem);
+  margin: 0.5rem;
+
+  h1 {
+    font-size: unset;
+    font-weight: 400;
+    padding: 1rem 0.5rem;
+  }
+}
+
+.history-row {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 1rem;
+  padding: clamp(0.5rem, 2vw, 1rem);
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 4fr 3fr 0.5fr 0.5fr;
+  gap: 1rem;
+  align-items: center;
+
+  #citycountry-history-text {
+    justify-self: flex-start;
+  }
+
+  p {
+    margin: 0;
+  }
+
+}
+
+
+.history-rows {
+  max-height: 34.25rem;
+  overflow: auto;
+}
+
+.search-history-btn,
+.delete-history-btn {
+  height: 2.125rem;
+  width: 2.125rem;
+  border-radius: 1rem;
+  background-color: var(--dark-purple);
+  outline: transparent;
+  border: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+#time-history-text {
+  justify-self: flex-end;
+}
+
+
+
+@media (max-width: 600px) {
+  .citycountry-history-text {
+    grid-area: citycountry;
+  }
+
+  .time-history-text {
+    grid-area: timehistory;
+  }
+
+  .search-history-btn {
+    grid-area: search;
+  }
+
+  .delete-history-btn {
+    grid-area: delete;
+  }
+
+  .history-row {
+    display: grid;
+    grid-template-columns: unset;
+    grid-template-areas:
+      'citycountry search delete'
+      'timehistory search delete';
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}

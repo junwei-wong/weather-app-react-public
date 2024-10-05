@@ -1,0 +1,38 @@
+:root {
+  --light-purple: rgba(108, 64, 181, 1);
+  --dark-purple: rgba(255, 255, 255, 1);
+  --white: rgba(255, 255, 255, 0.2);
+  --black: rgba(255, 255, 255, 0.5);
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url(./assets/fonts/Noto_Sans/NotoSans-VariableFont_wdth.wght.ttf);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background: url(./assets/images/bg-light.png);
+  background-size: cover;
+  background-position: center;
+  font-family: Noto Sans;
+  font-size: clamp(12px, 2vw, 16px);
+  font-weight: 400;
+}
+
+.container {
+  margin: 1rem;
+}
+
+.content {
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: clamp(1rem, 2vw, 2rem) clamp(1rem, 2vw, 2.5rem);
+  margin-top: 5rem;
+  width: clamp(22.5rem, 90vw, 43.75rem);
+}
+
+[disabled] {
+  cursor: not-allowed
+}

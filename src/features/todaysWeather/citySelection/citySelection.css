@@ -1,0 +1,24 @@
+:root {
+  --light-purple: rgba(108, 64, 181, 1);
+  --dark-purple: rgba(255, 255, 255, 1);
+  --white: rgba(255, 255, 255, 0.2);
+  --black: rgba(255, 255, 255, 0.5);
+}
+
+.city-selection {
+  background-color: var(--white);
+  padding-left: 1rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+.city-selection:hover {
+  outline: 1px solid black;
+  cursor: pointer;
+}
